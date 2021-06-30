@@ -18,6 +18,9 @@ out vec3 col;
 vec3 col0 = vec3( 0.047058823529411764, 0.45098039215686275, 0.996078431372549 );
 vec3 col1 = vec3( 1.0, 1.0, 1.0 );
 
+float particleSizeMin = 1.5;
+float particleSizeMax = 10.0;
+
 void main( void ){
 
 
@@ -29,11 +32,11 @@ void main( void ){
 
 	// calculate projected coordinates
 	gl_Position = mtxProjection * posCamera;
-	gl_PointSize = 2.0;
 
-//	gl_Position = vec4(aPosition,1.0);
-
-
+	// point size from perspective
+//	gl_PointSize = 2.0;
+	float mfperspective = pow(clamp( 1.0 - gl_Position.w * 0.005, 0.0, 1.0), 5.0);
+	gl_PointSize = mix( particleSizeMin, particleSizeMax, mfperspective );
 
 	// mix colors based on height
 	float mfmix = smoothstep( planeHeights.x, planeHeights.y, posModel.z );
