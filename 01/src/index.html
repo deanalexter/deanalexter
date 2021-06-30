@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="style.css?v=1.0">
+
+
+  <!-- third party libs -->
+  <script src="js/libs/gl-matrix.js" defer=""></script>
+
+  <!-- js -->
+  <script src="js/camera.js" defer=""></script>
+  <script src="js/renderer.js" defer=""></script>
+  <script src="js/webgl.js" defer=""></script>
+  <script src="js/app.js" defer=""></script>
+
+  <!-- mapbox -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+  <title>lidar test</title>
+</head>
+
+<body onload="app.init();">
+
+<div id="controls">
+<div>points % <input type="range" id="slider1" name="slider1" min="0" max="100"/></div>
+<div>iso lock <input type="range" id="slider2" name="slider2" min="0" max="100" value="0"/></div>
+<!--
+<input type="range" id="slider3" name="slider3" min="0" max="100"/>
+<input type="range" id="slider4" name="slider4" min="0" max="100"/>
+<input type="range" id="slider5" name="slider5" min="0" max="100"/>
+<input type="range" id="slider6" name="slider6" min="0" max="100"/>
+<input type="range" id="slider7" name="slider7" min="0" max="100"/>
+<input type="range" id="slider8" name="slider8" min="0" max="100"/>
+<input type="range" id="slider9" name="slider9" min="0" max="100"/>
+<input type="range" id="slider10" name="slider10" min="0" max="100"/>
+-->
+</div>
+
+<!-- gl canvas -->
+<canvas id="canvas-webgl"></canvas>
+
+<!-- mapbox test -->
+<!--
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+// TO MAKE THE MAP APPEAR YOU MUST
+// ADD YOUR ACCESS TOKEN FROM
+// https://account.mapbox.com
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2NvdGhpcyIsImEiOiJjaWp1Y2ltYmUwMDBicmJrdDQ4ZDBkaGN4In0.sbihZCZJ56-fsFNKHXF8YQ';
+var map = new mapboxgl.Map({
+container: 'map', // container ID
+style: 'mapbox://styles/mapbox/streets-v11', // style URL
+center: [-74.5, 40], // starting position [lng, lat]
+zoom: 9 // starting zoom
+});
+</script>
+-->
+
+<div id="testlabel" class="label-3d">I'm a Tree</div>
+
+</body>
+</html>
